@@ -1,5 +1,6 @@
 // version 2
 import React, { useRef, useEffect, useCallback, useState } from "react";
+import BuffleHeader from "./BuffleHeader";
 import "./RotatingCube.css";
 
 const RotatingCube = () => {
@@ -40,16 +41,19 @@ const RotatingCube = () => {
   };
 
   return (
-    <main onMouseMove={handleMouseMove}>
-      <div className="rotating-cube" ref={cubeRef}>
-        <div className="face front"></div>
-        <div className="face back"></div>
-        <div className="face left"></div>
-        <div className="face right"></div>
-        <div className="face top"></div>
-        <div className="face bottom"></div>
-      </div>
-    </main>
+    <>
+      <main onMouseMove={handleMouseMove}>
+        <div className="rotating-cube" ref={cubeRef}>
+          <div className="face front"></div>
+          <div className="face back"></div>
+          <div className="face left"></div>
+          <div className="face right"></div>
+          <div className="face top"></div>
+          <div className="face bottom"></div>
+        </div>
+        <BuffleHeader />
+      </main>
+    </>
   );
 };
 
