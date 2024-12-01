@@ -20,22 +20,24 @@ function App() {
       "desert",
       "underwater",
       "white-diamond",
-      "default", // Original background
+      "default",
     ];
+
     const randomAtmosphere =
       atmospheres[Math.floor(Math.random() * atmospheres.length)];
     setBackground(randomAtmosphere);
 
-    // Trigger the re-buffering animation
-    setBufferTrigger((prev) => prev + 1);
+    setBufferTrigger((prev) => prev + 1); // Increment trigger
   };
+
+  console.log("App rendered", bufferTrigger);
 
   return (
     <div className={`app ${background}`}>
       <FloatingButton onClick={changeAtmosphere} />
       <RotatingCube />
-      {/* Pass bufferTrigger as key to force re-mount */}
-      <BuffleHeader key={bufferTrigger} />
+      <BuffleHeader trigger={bufferTrigger} />{" "}
+      {/* Pass trigger to force reanimation */}
     </div>
   );
 }

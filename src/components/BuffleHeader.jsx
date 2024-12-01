@@ -1,5 +1,54 @@
-// "Modernized" version
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import "./BuffleHeader.css";
+
+const BuffleHeader = ({ trigger = 0 }) => {
+  const [currentText, setCurrentText] = useState("");
+  const messages = ["Tuanthong Vaidyanond"];
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    console.log("BuffleHeader mounted or updated", trigger);
+
+    let index = 0;
+    timerRef.current = setInterval(() => {
+      setCurrentText(messages[0].slice(0, ++index));
+      if (index >= messages[0].length) clearInterval(timerRef.current);
+    }, 100);
+
+    return () => {
+      console.log("BuffleHeader unmounted", trigger);
+      clearInterval(timerRef.current);
+    };
+  }, [trigger]); // Triggers reanimation when trigger changes
+
+  return (
+    <section className="welcome" id="home">
+      <div className="wrapper">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+        >
+          <h1>
+            <span className="name">{currentText}</span>
+            <br />
+            <span>My Journey Through</span>
+            <br />
+            <span>Web Development</span>
+          </h1>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default BuffleHeader;
+
+{
+  /** 
+   * Modernized version! 
+* import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./BuffleHeader.css";
 
@@ -7,6 +56,8 @@ const BuffleHeader = () => {
   const [currentText, setCurrentText] = useState("");
   const [index, setIndex] = useState(0);
   const messages = ["Tuanthong Vaidyanond"];
+
+  // Reset
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,9 +94,11 @@ const BuffleHeader = () => {
 };
 
 export default BuffleHeader;
-
-{
-  /** Old version
+   * 
+   * 
+   * 
+   * 
+   * Old version
     import { useEffect } from "react";
 import "./BuffleHeader.css";
 
