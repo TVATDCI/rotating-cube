@@ -1,14 +1,8 @@
 .welcome {
   background: transparent;
   text-align: center;
-  padding: 2rem;
-  margin-top: 3rem;
-}
-
-.welcome-name h1 {
-  font-size: 2rem;
-  line-height: 1.4;
-  font-family: "Roboto", sans-serif;
+  padding: 1.5em;
+  margin-top: 2.5em;
 }
 
 #wrapper {

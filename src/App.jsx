@@ -3,6 +3,7 @@ import DynamicBackground from "./components/DynamicBackground";
 import RotatingCube from "./components/RotatingCube";
 import FloatingButton from "./components/FloatingButton";
 import BuffleHeader from "./components/BuffleHeader";
+import MatrixGrid from "./components/MatrixGrid";
 
 function App() {
   const [background, setBackground] = useState("dynamic-gradient"); // Start with dynamic gradient
@@ -22,6 +23,7 @@ function App() {
       "underwater",
       "white-diamond",
       "dynamic-gradient", // Dynamic gradient option
+      "matrix-grid",
       "default",
     ];
 
@@ -37,6 +39,7 @@ function App() {
     <div className={`app ${background}`}>
       {/* Render DynamicBackground only for dynamic-gradient */}
       {background === "dynamic-gradient" && <DynamicBackground />}
+      {background === "matrix-grid" && <MatrixGrid />}
 
       <FloatingButton onClick={changeAtmosphere} />
       <RotatingCube />

@@ -4,7 +4,7 @@ import "./BuffleHeader.css";
 
 const BuffleHeader = ({ trigger = 0 }) => {
   const [currentText, setCurrentText] = useState("");
-  const messages = ["Tuanthong Vaidyanond,"];
+  const messages = ["TUANTHONG VAIDYANOND,"];
   const timerRef = useRef(null);
 
   useEffect(() => {

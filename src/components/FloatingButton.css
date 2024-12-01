@@ -1,8 +1,10 @@
 /* Floating button */
 .floating-button {
   position: fixed;
-  top: 2rem;
-  right: 50%;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%, -50%);
+  text-align: center;
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
