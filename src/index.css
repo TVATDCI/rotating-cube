@@ -16,7 +16,11 @@ body {
 
 h1 {
   font-size: 2.5em;
-  color: red;
+  font-family: monospace;
+  color: transparent;
+  -webkit-text-fill-color: #e1d1db;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 /* Default background */

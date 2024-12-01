@@ -4,7 +4,7 @@ import "./BuffleHeader.css";
 
 const BuffleHeader = ({ trigger = 0 }) => {
   const [currentText, setCurrentText] = useState("");
-  const messages = ["Tuanthong Vaidyanond"];
+  const messages = ["Tuanthong Vaidyanond,"];
   const timerRef = useRef(null);
 
   useEffect(() => {
@@ -28,14 +28,16 @@ const BuffleHeader = ({ trigger = 0 }) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 2.5 }}
         >
           <h1>
             <span className="name">{currentText}</span>
             <br />
-            <span>My Journey Through</span>
+            <span>is my name.</span>
             <br />
-            <span>Web Development</span>
+            <span>Welcome to a part of my Journey</span>
+            <br />
+            <span>through Web Development</span>
           </h1>
         </motion.div>
       </div>
