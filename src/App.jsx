@@ -4,9 +4,10 @@ import RotatingCube from "./components/RotatingCube";
 import FloatingButton from "./components/FloatingButton";
 import BuffleHeader from "./components/BuffleHeader";
 import MatrixGrid from "./components/MatrixGrid";
+import RainbowBackground from "./components/RainbowBackground";
 
 function App() {
-  const [background, setBackground] = useState("dynamic-gradient"); // Start with dynamic gradient
+  const [background, setBackground] = useState("dynamic-gradient"); // Default background
   const [bufferTrigger, setBufferTrigger] = useState(0);
 
   const changeAtmosphere = () => {
@@ -24,12 +25,17 @@ function App() {
       "white-diamond",
       "dynamic-gradient", // Dynamic gradient option
       "matrix-grid",
+      "rainbow-background",
       "default",
     ];
 
-    const randomAtmosphere =
-      atmospheres[Math.floor(Math.random() * atmospheres.length)];
-    setBackground(randomAtmosphere); // Update background state
+    let newAtmosphere;
+    do {
+      newAtmosphere =
+        atmospheres[Math.floor(Math.random() * atmospheres.length)];
+    } while (newAtmosphere === background); // Avoid same consecutive background
+
+    setBackground(newAtmosphere);
     setBufferTrigger((prev) => prev + 1); // Force BuffleHeader re-render
   };
 
@@ -37,9 +43,10 @@ function App() {
 
   return (
     <div className={`app ${background}`}>
-      {/* Render DynamicBackground only for dynamic-gradient */}
+      {/* Render corresponding background component */}
       {background === "dynamic-gradient" && <DynamicBackground />}
       {background === "matrix-grid" && <MatrixGrid />}
+      {background === "rainbow-background" && <RainbowBackground />}
 
       <FloatingButton onClick={changeAtmosphere} />
       <RotatingCube />

@@ -10,13 +10,14 @@ main {
 
 .rotating-cube {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   transform-style: preserve-3d;
   animation: rotate 10s linear infinite;
   /*perspective: 800px; add it for a real 3d effect*/
   /*padding: 1em;*/
   transition: box-shadow 1s ease-in-out;
+  z-index: 1;
 }
 
 /* Glow effects based on the background (atmosphere) */

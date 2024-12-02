@@ -1,13 +1,12 @@
 /* Floating button */
 .floating-button {
-  position: fixed;
-  top: 30%;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%, -50%);
-  text-align: center;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   background-image: radial-gradient(
     circle,
     rgba(248, 183, 5, 1),
@@ -15,21 +14,17 @@
     rgba(253, 187, 45, 0.9) 100%
   );
   color: #fdbb2d;
-  border: 1px solid #fdbb2d;
+  border: 5px solid #fdbb2d;
   padding: 0.5rem;
   font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: transform 0.3s, background-color 0.3s;
-  opacity: 0.8;
   z-index: 1000;
 }
 
 .floating-button:hover {
-  transform: scale(1.1);
   font-size: 100%;
   background-image: radial-gradient(
     circle,
