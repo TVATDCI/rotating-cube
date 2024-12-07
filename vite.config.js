@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: ["@tsParticles/engine", "@tsParticles/react"],
-      base: "/roll-cube/", // This should match your repository name
+      base: "/rotating-cube/", // This should match your repository name
     },
   },
 });
