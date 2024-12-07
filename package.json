@@ -12,11 +12,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tsparticles/engine": "^3.7.1",
+    "@tsparticles/react": "^3.0.0",
     "framer-motion": "^11.12.0",
+    "howler": "^2.2.4",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-tsparticles": "^2.12.2",
-    "tsparticles": "^3.7.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
