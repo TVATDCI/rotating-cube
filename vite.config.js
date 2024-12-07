@@ -1,13 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: "/rotating-cube/", // This matches your GitHub Pages repo name
+  base: "/rotating-cube/",
   plugins: [react()],
-  build: {
-    rollupOptions: {
-      external: ["@tsParticles/engine", "@tsParticles/react"], // Keep this if necessary
-    },
+  optimizeDeps: {
+    include: ["@tsparticles/engine", "@tsparticles/react"],
   },
 });

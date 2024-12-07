@@ -1,11 +1,10 @@
 import Particles from "@tsparticles/react";
-import { loadFull } from "@tsparticles/engine";
-//import { Engine } from "@tsparticles/engine";
+import { loadFull } from "tsparticles";
 
 const RainbowBackground = () => {
   const particlesInit = async (engine) => {
     console.log("Particles initialized", engine);
-    await loadFull(engine);
+    await loadFull(engine); // Load the full engine
   };
 
   const particlesOptions = {

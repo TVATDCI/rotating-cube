@@ -106,3 +106,59 @@ span {
   color: #ffffff;
   background-color: #000000;
 }
+
+.soundcloud-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.play-pause-button {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  background-image: radial-gradient(
+    circle,
+    rgba(248, 183, 5, 1),
+    rgba(253, 187, 45, 0.8) 50%,
+    rgba(253, 187, 45, 0.9) 100%
+  );
+  color: #fdbb2d;
+  border: 5px solid #fdbb2d;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  z-index: 1000;
+}
+
+.play-pause-button:hover {
+  font-size: 100%;
+  background-image: radial-gradient(
+    circle,
+    rgba(248, 183, 5, 0.9),
+    rgb(213, 156, 2, 0.7) 50%,
+    rgba(253, 199, 51, 0.5) 100%
+  );
+  backdrop-filter: blur(10px);
+}
+
+/**
+.audioControl {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+iframe {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+  */

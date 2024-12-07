@@ -4,14 +4,15 @@ import RotatingCube from "./components/RotatingCube";
 import FloatingButton from "./components/FloatingButton";
 import BuffleHeader from "./components/BuffleHeader";
 import MatrixGrid from "./components/MatrixGrid";
-import BackgroundAudio from "./components/BackgroundAudio";
+import Soundcloud from "./components/Soundcloud";
+//import BackgroundAudio from "./components/BackgroundAudio";
 //import RainbowBackground from "./components/RainbowBackground";
 
 function App() {
   const [background, setBackground] = useState("dynamic-gradient"); // Default background
   const [bufferTrigger, setBufferTrigger] = useState(0);
 
-  const changeAtmosphere = () => {
+  const getRandomAtmosphere = (current) => {
     const atmospheres = [
       "space",
       "nebula",
@@ -24,32 +25,33 @@ function App() {
       "desert",
       "underwater",
       "white-diamond",
-      "dynamic-gradient", // Dynamic gradient option
+      "dynamic-gradient",
       "matrix-grid",
       "default",
     ];
-
     let newAtmosphere;
     do {
       newAtmosphere =
         atmospheres[Math.floor(Math.random() * atmospheres.length)];
-    } while (newAtmosphere === background); // Avoid same consecutive background
-
-    setBackground(newAtmosphere);
-    setBufferTrigger((prev) => prev + 1); // Force BuffleHeader re-render
+    } while (newAtmosphere === current);
+    return newAtmosphere;
   };
 
-  console.log("App rendered with background:", background);
+  const changeAtmosphere = () => {
+    setBackground(getRandomAtmosphere(background));
+    setBufferTrigger((prev) => prev + 1);
+  };
 
   return (
     <div className={`app ${background}`}>
       {/* Render corresponding background component */}
-      <BackgroundAudio />
+      {/*<BackgroundAudio />*/}
       {background === "dynamic-gradient" && <DynamicBackground />}
       {background === "matrix-grid" && <MatrixGrid />}
-      {/* {background === "rainbow" && <RainbowBackground />} */}
+      {/*{background === "rainbow" && <RainbowBackground />}*/}
       <FloatingButton onClick={changeAtmosphere} />
       <RotatingCube />
+      <Soundcloud />
       <BuffleHeader trigger={bufferTrigger} />
     </div>
   );
