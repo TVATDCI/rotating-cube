@@ -1,4 +1,3 @@
-import React from "react";
 import Particles from "@tsparticles/react";
 import { loadFull } from "@tsparticles/engine";
 //import { Engine } from "@tsparticles/engine";
