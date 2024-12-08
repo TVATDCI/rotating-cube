@@ -1,3 +1,43 @@
+//version: 3
+import React, { useRef, useEffect, useState } from "react";
+
+const Soundcloud = () => {
+  const iframeRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlayPause = () => {
+    const widget = SC.Widget(iframeRef.current);
+    if (isPlaying) {
+      widget.pause();
+    } else {
+      widget.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  return (
+    <div className="soundcloud-player">
+      <iframe
+        ref={iframeRef}
+        style={{ display: "none" }}
+        width="100%"
+        height="166"
+        scrolling="no"
+        frameBorder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/iniwanko/sets/approachingtheunknown&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false"
+      ></iframe>
+      <button onClick={togglePlayPause} className="play-pause-button">
+        {isPlaying ? "Pause" : "Play"}
+      </button>
+    </div>
+  );
+};
+
+export default Soundcloud;
+
+{
+  /*
 import React, { useRef, useEffect, useState } from "react";
 
 const Soundcloud = () => {
@@ -31,7 +71,10 @@ const Soundcloud = () => {
 
   return (
     <div className="soundcloud-player">
-      {/* Hidden iframe for SoundCloud widget */}
+      {/* Hidden iframe for SoundCloud widget */
+}
+{
+  /*}
       <iframe
         ref={iframeRef}
         style={{ display: "none" }} // Hide the default player
@@ -42,7 +85,6 @@ const Soundcloud = () => {
         frameBorder="no"
       ></iframe>
 
-      {/* Custom Play/Pause Button */}
       <button onClick={togglePlayPause} className="play-pause-button">
         {isPlaying ? "🔇" : "🔊"}
       </button>
@@ -51,6 +93,8 @@ const Soundcloud = () => {
 };
 
 export default Soundcloud;
+*/
+}
 
 {
   /*
