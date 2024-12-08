@@ -28,7 +28,7 @@ const Soundcloud = () => {
         src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/iniwanko/sets/approachingtheunknown&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false"
       ></iframe>
       <button onClick={togglePlayPause} className="play-pause-button">
-        {isPlaying ? "Pause" : "Play"}
+        {isPlaying ? "pause" : "play"}
       </button>
     </div>
   );

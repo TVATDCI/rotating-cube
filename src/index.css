@@ -115,11 +115,15 @@ span {
 }
 
 .play-pause-button {
+  display: inline-block;
   background-color: transparent;
-  color: white;
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 1.2em;
+  text-align: center;
+  color: transparent;
+  -webkit-text-fill-color: #e1d1db;
+
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
