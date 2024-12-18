@@ -83,6 +83,7 @@ span {
     no-repeat center center/cover;
 }
 
+/**
 .audioControl {
   position: fixed;
   bottom: 1rem;
@@ -108,10 +109,14 @@ span {
 }
 
 .soundcloud-player {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
+  z-index: 1;
 }
 
 .play-pause-button {
@@ -138,7 +143,7 @@ span {
   transition: background-color 0.3s ease;
 }
 
-/**
+
 .audioControl {
   max-width: 100%;
   margin: 0 auto;
